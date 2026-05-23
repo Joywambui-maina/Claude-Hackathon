@@ -1,0 +1,49 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #FFF9F3;
+  --color-surface: #FFFFFF;
+  --color-green: #1D6B45;
+  --color-green-light: #E8F5EE;
+  --color-green-dark: #134D31;
+  --color-amber: #E07B39;
+  --color-amber-light: #FFF0E6;
+  --color-text: #1C1917;
+  --color-text-muted: #78716C;
+  --color-border: #E7E5E4;
+  --color-white: #FFFFFF;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: var(--font-body);
+  outline: none;
+}

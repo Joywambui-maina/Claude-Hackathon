@@ -1,8 +1,17 @@
 export type Language = 'swahili' | 'yoruba' | 'spanish'
 
+export type StudyTime = 'morning' | 'afternoon' | 'evening' | 'night'
+
+export type DailyGoalMinutes = 5 | 10 | 15 | 20
+
+export type ContentInterest = 'poetry' | 'stories' | 'music' | 'events'
+
 export interface User {
   name: string
   language: Language
+  studyTime: StudyTime
+  dailyGoalMinutes: DailyGoalMinutes
+  interests: ContentInterest[]
 }
 
 export interface Entry {
