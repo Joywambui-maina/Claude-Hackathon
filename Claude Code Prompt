@@ -1,0 +1,139 @@
+You are building a spec document for a mobile-first web app called Mizizi. 
+Your goal is complete when the spec satisfies TWO conditions:
+1. The four demo screens work end-to-end as described
+2. Every criterion in the hackathon rubric is demonstrably addressed
+
+Do not signal completion until both conditions are verified.
+You may ask clarifying questions when a decision would meaningfully change 
+the spec. Otherwise, make a reasonable choice and note your assumption.
+
+---
+
+## Project Overview
+
+Mizizi (Swahili for "roots") is a daily 20-minute language and cultural 
+preservation app for diaspora and international students. It helps users 
+maintain their heritage language through creative expression, not grammar 
+drills. It also learns the user's culture *from the user* — refining its 
+understanding through feedback until the user feels genuinely represented.
+
+The core design principle: AI is the student. The user is the authority 
+on their own culture.
+
+---
+
+## The Three Documents to Produce
+
+### 1. Technical Overview
+- Stack: React + TypeScript, localStorage (no backend), mobile-first
+- Architecture: how the four screens relate, how state flows between them
+- The feedback loop system: how the app builds and refines a cultural 
+  profile over time based on user responses and explicit corrections
+- Data models: user profile, cultural profile, archive entries, 
+  prompt rotation, event filtering
+- How the teach-the-AI layer works technically: after N entries, the app 
+  surfaces a reflection ("Based on what you've shared, X seems important 
+  to your culture — is that right?") and lets the user correct it. 
+  This refined understanding should influence future prompt selection 
+  and event surfacing.
+
+### 2. Functional Requirements
+Cover every user-facing behavior across all four screens:
+
+**Onboarding**
+- Name, university, heritage language (searchable dropdown, up to 2), 
+  fluency level, free time window
+- Display: "Mizizi learns from you, not the other way around."
+
+**Home / Today**
+- Daily prompt in heritage language + English context
+- "Your 20 minutes starts now" banner when opened near preferred time
+- One campus event card filtered by user's cultural background
+- Streak counter visible
+
+**Respond**
+- Text input or voice note
+- Save to archive
+
+**Archive**
+- Timeline of all entries — feels like a journal, not a notes app
+- Streak counter
+- Display: "This is your voice. These words belong to you."
+- Periodic cultural reflection prompts surfaced here 
+  (the feedback loop touchpoint)
+
+**Feedback loop (cross-screen)**
+- After every 3 entries, surface a reflection question in the archive
+- User can confirm, correct, or add nuance
+- Corrections update the stored cultural profile
+- Cultural profile influences: which prompts are prioritized, 
+  which events are surfaced
+
+### 3. Implementation Guide
+- File/component structure
+- localStorage schema (what gets stored, under what keys)
+- Prompt rotation logic (7 prompts per language, rotate by day of week)
+- Event filtering logic (6 mock events tagged by cultural theme)
+- Feedback loop trigger logic and cultural profile update flow
+- The 15 supported languages with all prompts in native script + 
+  English context (see language list below)
+- Ethical constraints to implement visibly (see below)
+
+---
+
+## Languages and Prompts
+
+Support these 15 languages. For each, provide 3 prompts following this 
+pattern — in native script with English context underneath:
+1. Sensory memory (mother's kitchen, childhood sound, familiar smell)
+2. Untranslatable word ("What word in your language has no English 
+   equivalent? Use it in a sentence")
+3. Celebration/community memory ("Remember a family or community 
+   gathering. What do you feel?")
+
+Languages: Swahili, Yoruba, Amharic, Arabic, Hindi, Mandarin, Cantonese, 
+Japanese, Korean, Spanish, Portuguese, French (Cameroonian/Congolese 
+context), Haitian Creole, Tagalog, Bengali
+
+Use native script for all (Arabic script, Devanagari, Hangul, etc.)
+
+---
+
+## Hardcoded Assets
+
+**Mock campus events (6 total):**
+Tag each by cultural theme: African, South Asian, East Asian, Latino, 
+Middle Eastern, Caribbean/Southeast Asian. Make them feel like real 
+Dartmouth events (include building names, realistic timing).
+
+**Prompts:** Use the Swahili, Spanish, and Mandarin prompts from the 
+original spec exactly. Generate the remaining 12 languages.
+
+---
+
+## Ethical Constraints (must appear visibly in the spec)
+- AI never generates cultural content or speaks for a culture
+- All prompts invoke the USER's memory, not AI's interpretation
+- The feedback loop asks, never asserts
+- "This is your voice. These words belong to you." — archive screen
+- "Mizizi learns from you, not the other way around." — onboarding
+
+---
+
+## Hackathon Rubric (your second verification condition)
+Before marking complete, confirm the spec explicitly addresses:
+- Impact: who this is for, what problem it solves, what success looks like
+- Technical execution: is the demo buildable? Does the core loop work?
+- Ethical alignment: is AI use justified? Does it enhance, not replace?
+- Presentation: is there a clear narrative a judge can follow in 2 minutes?
+
+---
+
+## Completion Criteria
+
+Do not output "complete" until you can answer YES to both:
+1. Can a developer build the four working demo screens from this spec 
+   alone, without asking questions?
+2. Does the spec contain explicit evidence for all four rubric criteria?
+
+If either answer is NO, identify the gap and fill it before finishing.
