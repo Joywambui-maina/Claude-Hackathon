@@ -32,3 +32,36 @@ export interface StoryPrompt {
   promptEnglish: string
   culturalNote: string
 }
+
+export interface Song {
+  id: string
+  language: Language
+  title: string
+  titleNative: string
+  region: string
+  linesNative: string[]
+  linesEnglish: string[]
+  culturalNote: string
+}
+
+export interface FolkStory {
+  id: string
+  language: Language
+  title: string
+  titleNative: string
+  excerpt: string
+  excerptEnglish: string
+  moral: string
+  culturalNote: string
+}
+
+export interface Poem {
+  id: string
+  language: Language
+  title: string
+  titleNative: string
+  author: string
+  linesNative: string[]
+  linesEnglish: string[]
+  culturalNote: string
+}
