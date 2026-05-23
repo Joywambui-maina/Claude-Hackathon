@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import type { CSSProperties } from 'react'
 import { storage } from '../utils/storage'
 import type { Language, StudyTime, DailyGoalMinutes, ContentInterest, User } from '../types'
 
@@ -316,7 +317,7 @@ function StepPuzzle({
   // Shuffle options once per puzzle (stable across re-renders)
   const shuffled = useMemo(() => [...puzzle.options].sort(() => Math.random() - 0.5), [puzzle])
 
-  function optionStyle(option: string): React.CSSProperties {
+  function optionStyle(option: string): CSSProperties {
     if (!answered) return styles.puzzleOption
     if (option === puzzle.correct) return { ...styles.puzzleOption, ...styles.puzzleOptionCorrect }
     if (option === choice) return { ...styles.puzzleOption, ...styles.puzzleOptionWrong }
@@ -480,7 +481,7 @@ function ProgressDots({ current, total }: { current: number; total: number }) {
 
 // ── Styles ────────────────────────────────────────────────────────────────────
 
-const styles: Record<string, React.CSSProperties> = {
+const styles: Record<string, CSSProperties> = {
   page: {
     minHeight: '100vh',
     display: 'flex',

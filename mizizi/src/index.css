@@ -5,6 +5,7 @@
 }
 
 :root {
+  /* ── Onboarding palette (green/forest) ─────────────────── */
   --color-bg: #FFF9F3;
   --color-surface: #FFFFFF;
   --color-green: #1D6B45;
@@ -16,34 +17,100 @@
   --color-text-muted: #78716C;
   --color-border: #E7E5E4;
   --color-white: #FFFFFF;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+
+  /* ── Home / Respond palette (terracotta / earth) ────────── */
+  --bg:           #FBF5EC;
+  --bg-card:      #FFFFFF;
+  --border:       #ECD9C4;
+  --border-focus: #C4622D;
+
+  --brown-900: #1C0E06;
+  --brown-700: #4A2D18;
+  --brown-500: #7A5538;
+  --brown-400: #A3815F;
+  --brown-300: #B8946A;
+  --brown-200: #C8B09A;
+  --brown-100: #F0E4D0;
+  --brown-50:  #FBF5EC;
+
+  --terra-600: #A84E22;
+  --terra-500: #C4622D;
+  --terra-400: #D4784A;
+  --terra-100: #F9E8DF;
+
+  --gold-600: #B87D1A;
+  --gold-500: #D4962A;
+  --gold-100: #FDF3DE;
+
+  --font-serif:  'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-ui:     'DM Sans', 'Inter', system-ui, sans-serif;
+  --font-native: 'Noto Serif', 'Noto Serif Ethiopic', 'Noto Naskh Arabic', serif;
+
+  --shadow-card: 0 2px 20px rgba(28, 14, 6, 0.07);
+  --shadow-lift: 0 4px 32px rgba(28, 14, 6, 0.12);
+
+  --radius-sm:   8px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-pill: 100px;
 }
 
-html, body, #root {
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+html, body {
   height: 100%;
   width: 100%;
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  font-family: var(--font-ui);
+  background-color: var(--bg);
+  color: var(--brown-900);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+#root {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
 }
 
 button {
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   cursor: pointer;
   border: none;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-input {
-  font-family: var(--font-body);
+input, textarea {
+  font-family: var(--font-ui);
   outline: none;
+}
+
+.native-script {
+  font-family: var(--font-native);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
